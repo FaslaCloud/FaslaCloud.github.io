@@ -5,46 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Fasla Cloud — البيانات الرسمية</title>
-    <meta name="description" content="البيانات القانونية الرسمية لـ Fasla Cloud: السجل التجاري، البطاقة الضريبية، العنوان ووسائل التواصل.">
+    <title>Fasla Cloud</title>
 
     <style>
-        :root {
-            --primary: #003478;
-            --primary-dark: #002a61;
-            --ink: #1c1e21;
-            --muted: #5c6670;
-            --line: #dadde1;
-            --surface: #f0f2f5;
-        }
-        * { box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             margin: 0;
-            color: var(--ink);
+            color: #1c1e21;
             background: #ffffff;
-            line-height: 1.7;
+            line-height: 1.6;
         }
         .wrap { max-width: 1100px; margin: auto; padding: 0 24px; }
         .hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            background: linear-gradient(135deg, #0a5fd4 0%, #1877F2 100%);
             color: #fff;
             padding: 80px 0 60px;
             text-align: center;
         }
-        .hero h1 { font-size: 36px; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.5px; }
+        .hero h1 { font-size: 36px; margin: 0 0 12px; font-weight: 700; }
         .hero p { font-size: 18px; margin: 0; opacity: 0.95; }
         .navbar {
             background: #fff;
-            border-bottom: 1px solid var(--line);
+            border-bottom: 1px solid #dadde1;
             padding: 16px 0;
             position: sticky;
             top: 0;
             z-index: 100;
         }
-        .nav-links { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
+        .nav-links { display: flex; gap: 32px; justify-content: center; }
         .nav-links a {
-            color: var(--primary);
+            color: #1877F2;
             text-decoration: none;
             font-weight: 600;
             font-size: 16px;
@@ -54,56 +44,52 @@
         .block { margin-bottom: 60px; }
         .block h2 {
             font-size: 28px;
-            color: var(--primary);
+            color: #1877F2;
             margin-bottom: 20px;
-            border-right: 4px solid var(--primary);
+            border-right: 4px solid #1877F2;
             padding-right: 16px;
         }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         .card {
-            background: var(--surface);
+            background: #f0f2f5;
             padding: 28px;
             border-radius: 8px;
-            border: 1px solid var(--line);
+            border: 1px solid #dadde1;
         }
-        .card h3 { margin: 0 0 12px; color: var(--primary); font-size: 20px; }
+        .card h3 { margin: 0 0 12px; color: #1877F2; font-size: 20px; }
         .data-list { list-style: none; padding: 0; margin: 0; }
         .data-list li {
+            padding: 14px 0;
+            border-bottom: 1px solid #e4e6ea;
             display: flex;
             justify-content: space-between;
-            gap: 16px;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--line);
         }
-        .data-list li:last-child { border-bottom: 0; }
-        .label { color: var(--muted); font-size: 15px; }
-        .value { font-weight: 600; font-size: 15px; text-align: left; direction: ltr; unicode-bidi: plaintext; }
-        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .data-list li:last-child { border-bottom: none; }
+        .label { font-weight: 600; color: #606770; }
+        .value { color: #1c1e21; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
         .service-item {
-            border: 1px solid var(--line);
-            border-radius: 8px;
             padding: 24px;
+            border: 1px solid #dadde1;
+            border-radius: 8px;
+            background: #fff;
         }
-        .service-item h4 { margin: 0 0 10px; font-size: 18px; color: var(--primary); }
-        .service-item p { margin: 0; color: var(--muted); font-size: 15px; }
-        .contact-list { list-style: none; padding: 0; margin: 0; }
-        .contact-list li { padding: 10px 0; font-size: 16px; }
-        .contact-list a { color: var(--primary); text-decoration: none; font-weight: 600; }
-        .contact-list a:hover { text-decoration: underline; }
+        .service-item h4 { margin: 0 0 10px; color: #1877F2; }
         .footer {
-            background: var(--surface);
-            border-top: 1px solid var(--line);
-            padding: 32px 0;
+            background: #1c1e21;
+            color: #b0b3b8;
             text-align: center;
-            color: var(--muted);
-            font-size: 14px;
+            padding: 40px 0;
+            font-size: 15px;
         }
-        @media (max-width: 820px) {
-            .hero { padding: 56px 0 40px; }
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
             .hero h1 { font-size: 28px; }
-            .grid-2, .services-grid { grid-template-columns: 1fr; gap: 24px; }
-            .data-list li { flex-direction: column; gap: 4px; }
-            .value { text-align: right; }
+            .nav-links { gap: 20px; font-size: 14px; }
         }
     </style>
 </head>
@@ -111,14 +97,14 @@
     <div class="hero">
         <div class="wrap">
             <h1>Fasla Cloud</h1>
-            <p>منصّة مصرية لإدارة التواصل مع العملاء عبر واتساب — سجل تجاري معتمد</p>
+            <p>منشأة متخصصة في تقنية المعلومات - سجل تجاري معتمد</p>
         </div>
     </div>
 
     <nav class="navbar">
         <div class="wrap">
             <div class="nav-links">
-                <a href="#about">عن الشركة</a>
+                <a href="#about">عن المؤسسة</a>
                 <a href="#legal">البيانات القانونية</a>
                 <a href="#services">الخدمات</a>
                 <a href="#contact">اتصل بنا</a>
@@ -129,35 +115,21 @@
     <main class="content">
         <div class="wrap">
             <section id="about" class="block">
-                <h2>عن الشركة</h2>
+                <h2>عن المؤسسة</h2>
                 <div class="grid-2">
                     <div>
-                        <p>Fasla Cloud منشأة مصرية مسجّلة، متخصّصة في تطوير حلول التواصل مع العملاء. توفّر المنصّة مساحة عمل موحّدة لإدارة محادثات واتساب: صندوق وارد مشترك، وإدارة جهات الاتصال، ومسارات البيع، والحملات التسويقية، والردود الآلية.</p>
-                        <p>تعمل الشركة ضمن إطار قانوني كامل، وتلتزم بمعايير حماية البيانات وسياسات واتساب للأعمال الصادرة عن Meta. ويقع المقر الرئيسي في القاهرة، جمهورية مصر العربية.</p>
+                        <p>Fasla Cloud هي منشأة رسمية متخصصة في تطوير حلول التواصل مع العملاء وإدارة محادثات واتساب للأعمال. نعمل تحت مظلة قانونية كاملة وملتزمون بمعايير حماية البيانات والخصوصية العالمية.</p>
+                        <p>نقدم خدماتنا للقطاع الخاص في مصر والمنطقة، ونهدف لتوفير حلول تقنية تساعد الشركات على النمو والتوسع بكفاءة عالية.</p>
                     </div>
                     <div class="card">
                         <h3>البيانات الرسمية</h3>
                         <ul class="data-list">
-                            <li><span class="label">الاسم التجاري بالعربية:</span><span class="value">Fasla Cloud</span></li>
-                            <li><span class="label">الاسم التجاري بالإنجليزية:</span><span class="value">Fasla Cloud</span></li>
+                            <li><span class="label">الاسم التجاري بالعربي:</span><span class="value">Fasla Cloud</span></li>
+                            <li><span class="label">الاسم التجاري بالإنجليزي:</span><span class="value">Fasla Cloud</span></li>
                             <li><span class="label">رقم الهاتف:</span><span class="value">+201015657091</span></li>
                             <li><span class="label">العنوان:</span><span class="value">13 Gesr Al Suez Street, Cairo, Egypt</span></li>
                         </ul>
                     </div>
-                </div>
-            </section>
-
-            <section id="legal" class="block">
-                <h2>البيانات القانونية</h2>
-                <div class="card">
-                    <ul class="data-list">
-                        <li><span class="label">رقم السجل التجاري:</span><span class="value">2376346</span></li>
-                        <li><span class="label">الرقم الضريبي:</span><span class="value">581937104</span></li>
-                        <li><span class="label">الكيان القانوني:</span><span class="value">Fasla Cloud</span></li>
-                        <li><span class="label">الدولة:</span><span class="value">Egypt</span></li>
-                        <li><span class="label">الموقع الرسمي:</span><span class="value">https://www.faslacloud.com</span></li>
-                        <li><span class="label">البريد الرسمي:</span><span class="value">info@faslacloud.com</span></li>
-                    </ul>
                 </div>
             </section>
 
@@ -170,38 +142,23 @@
                     </div>
                     <div class="service-item">
                         <h4>إدارة العملاء والمبيعات</h4>
-                        <p>قاعدة بيانات لجهات الاتصال ومسارات بيع تتيح تتبّع الفرص التجارية حتى إتمامها.</p>
+                        <p>قاعدة بيانات لجهات الاتصال ومسارات بيع تتيح تتبع الفرص التجارية حتى إتمامها.</p>
                     </div>
                     <div class="service-item">
                         <h4>الحملات والردود الآلية</h4>
                         <p>إرسال الحملات التسويقية عبر القوالب المعتمدة، وبناء ردود آلية تعمل على مدار الساعة.</p>
                     </div>
+
                 </div>
             </section>
 
-            <section id="contact" class="block">
-                <h2>اتصل بنا</h2>
-                <div class="grid-2">
-                    <div class="card">
-                        <h3>وسائل التواصل</h3>
-                        <ul class="contact-list">
-                            <li>الهاتف: <a href="tel:+201015657091" dir="ltr">+201015657091</a></li>
-                            <li>البريد الإلكتروني: <a href="mailto:info@faslacloud.com" dir="ltr">info@faslacloud.com</a></li>
-                            <li>الموقع الإلكتروني: <a href="https://www.faslacloud.com" dir="ltr">www.faslacloud.com</a></li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>العنوان</h3>
-                        <p style="margin:0">13 Gesr Al Suez Street<br>Cairo, Egypt</p>
-                    </div>
-                </div>
-            </section>
+
         </div>
     </main>
 
     <footer class="footer">
         <div class="wrap">
-            © 2026 Fasla Cloud — جميع الحقوق محفوظة. س.ت: 2376346 — الرقم الضريبي: 581937104
+            © 2026 Fasla Cloud - منشأة متخصصة في تقنية المعلومات. جميع الحقوق محفوظة. س.ت: 2376346
         </div>
     </footer>
 </body>
